@@ -1,0 +1,87 @@
+<div class="container">
+    <!-- Navbar-header -->
+    <div class="navbar-header">
+        <!-- LOGO -->
+        <img src="styles/picksberry.png" class="logo"></img>
+    </div>
+    <!-- end navbar-header -->
+    <!-- menu -->
+
+    <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+    <div class="navbar-collapse collapse" id="navbar-menu">
+        <!-- Navbar left -->
+        <ul class="nav navbar-nav nav-custom-left">
+            <li>
+                <a class=" btn-link" ui-sref="search">
+                    <span> {{vm.language.text.search}}</span>
+                </a>
+            </li>
+            <!-- <li>
+                <a class=" btn-link" ui-sref="register">
+                    <span> {{vm.language.text.screen.create_user}}</span>
+                </a>
+            </li> -->
+            <li class="">
+                <a class=" btn-link" ui-sref="login">
+                    <span></i> {{vm.language.text.screen.login}}</span>
+                </a>
+            </li>
+
+            <li class="">
+                <a class=" btn-link" href="" ng-click="vm.loginfacebook()">
+                    <span></i> facebook</span>
+                </a>
+            </li>
+            <li class="">
+                <a class=" btn-link" href="" ng-click="vm.logoutfacebook()">
+                    <span></i> facebook</span>
+                </a>
+            </li>
+
+
+           <!--  {{vm.language.languages}}
+            <li class="dropdown">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span class="lang-sm lang-lbl-full" lang="{{vm.language.languages.selection.code}}"></span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li ng-repeat="lang in vm.language.languages.list">
+                            <span class="lang-sm lang-lbl-full" lang="{{lang.code}}" ng-click="vm.changeLanguage(lang)"></span>
+                        </li>
+                    </ul>
+                </div>
+            </li> -->
+        </ul>
+
+        <ui-select ng-model="vm.language.languages.selection" theme="select2" style="min-width: 300px;">
+            <!-- <ui-select-match placeholder="select">{{$select.selected.code}}</ui-select-match> -->
+            <ui-select-match placeholder="select">
+                <span class="lang-sm lang-lbl-full" lang="{{$select.selected.code}}" ></span>
+            </ui-select-match>
+            <ui-select-choices repeat="lang in vm.language.languages.list | filter: {code: $select.search}">
+                <div ng-click="vm.changeLanguage(lang)" ng-bind-html="lang.code | highlight: $select.search"></div>
+                <small>
+            <span class="lang-sm lang-lbl-full" lang="{{lang.code}}" ng-click="vm.changeLanguage(lang)"></span>
+            </small>
+            </ui-select-choices>
+        </ui-select>
+        <!-- Navbar right -->
+        <!-- <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="">Login</a>
+            </li>
+            <li>
+                <a href="" class="btn btn-inverse btn-bordered navbar-btn">Signup</a>
+            </li>
+        </ul> -->
+    </div>
+    <!--/Menu -->
+</div>
+

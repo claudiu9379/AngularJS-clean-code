@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Todo List</title>
+	 <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.14/angular.js" data-semver="1.2.14"></script>
+    <script data-require="angular-animate@*" data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular-animate.js"></script>
+	<script src="lodash.js"></script>
+	<script src="todoList3.js"></script>
+	<script src="guid.service.js"></script>
+	
+
+</head>
+<body>
+	<div ng-app="app.todo" ng-controller="todoCtrl as vm">
+
+		<h2>Todo List</h2>
+
+	<form name="userForm"  ng-submit="vm.add()" required>
+		<input type="submit" value="Add New" required>
+		{{vm.errortext}}
+		<br>
+		
+	    <input type="text" name="todoInput"  ng-model="vm.todoInput" size="50" placeholder="Add New"
+			ng-minlength="2"
+	        ng-maxlength="10"
+	        required>
+	        <!-- show an error if username is too short -->
+	    <p ng-show="userForm.todoInput.$error.minlength">The element is to short</p>
+
+	    	<!-- show an error if username is too long -->
+	    <p ng-show="userForm.todoInput.$error.maxlength">The element is to long</p>
+
+			<!-- show an error if this isn't filled in only when is touched-->
+	    <p ng-show="userForm.todoInput.$touched && userForm.todoInput.$invalid">You must enter an element</p>
+		
+	</form>
+	
+	<ul>
+		<li ng-repeat="x in vm.todoList" ng-mouseover="vm.hoverIn()" ng-mouseleave="vm.hoverOut()"> 	
+			{{x.todoText}} 
+			<span ng-show="vm.hoverEdit" class="animate-show" >
+	            <a>
+	            <img src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519584-081_Pen-16.png"
+	             alt="">   
+	            <button ng-click="vm.remove(x)">Remove element</button>
+	            </a>
+            </span> 
+			
+		</li>	    		    
+	</ul>
+	
+		<!-- <ul>
+		        <li ng-repeat="task in tasks" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+		            {{task.name}}
+		            <span ng-show="hoverEdit" class="animate-show">
+		                <a>
+		                    <img src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519584-081_Pen-16.png" alt="">
+		                    Edit
+		                </a>
+		            </span>
+		        </li>
+		    </ul> -->
+
+
+</body>
+</html>
