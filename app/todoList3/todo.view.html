@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Todo List</title>
-	 <link rel="stylesheet" href="style.css" />
-    <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.14/angular.js" data-semver="1.2.14"></script>
-    <script data-require="angular-animate@*" data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular-animate.js"></script>
-	<script src="lodash.js"></script>
-	<script src="todoList3.js"></script>
-	<script src="guid.service.js"></script>
-	
 
-</head>
-<body>
-	<div ng-app="app.todo" ng-controller="todoCtrl as vm">
 
 		<h2>Todo List</h2>
 
@@ -38,9 +23,9 @@
 	</form>
 	
 	<ul>
-		<li ng-repeat="x in vm.todoList" ng-mouseover="vm.hoverIn()" ng-mouseleave="vm.hoverOut()"> 	
+		<li ng-repeat="x in vm.todoList" ng-mouseover="vm.hoverIn(x)" ng-mouseleave="vm.hoverOut(x)"> 	
 			{{x.todoText}} 
-			<span ng-show="vm.hoverEdit" class="animate-show" >
+			<span ng-show="x.hoverEdit" class="animate-show" >
 	            <a>
 	            <img src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519584-081_Pen-16.png"
 	             alt="">   
@@ -63,6 +48,3 @@
 		        </li>
 		    </ul> -->
 
-
-</body>
-</html>

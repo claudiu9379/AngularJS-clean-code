@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('app.todo',)
+    angular.module('app.todo')
         .service('guidService', GuidService);
 
     GuidService.$inject = [];

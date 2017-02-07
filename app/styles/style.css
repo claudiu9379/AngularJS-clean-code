@@ -1,8 +1,9 @@
-li {
+li{
     width: 200px;
     list-style-type: none;
     padding: 6px 10px;
 }
+
 li:hover {
     background: #EEE;
 }

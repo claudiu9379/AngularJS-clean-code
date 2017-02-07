@@ -1,0 +1,23 @@
+{
+  "name": "cleancode",
+  "description": "following the John Papa tutorial",
+  "main": "start.js",
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "~1.12.1",
+    "angular-route": "~1.6.1",
+    "angular-bootstrap": "~2.5.0",
+    "angular-ui-router": "~0.4.2",
+    "angular-animate": "~1.6.1",
+    "lodash": "~4.17.4"
+  }
+}

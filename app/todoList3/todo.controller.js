@@ -2,11 +2,11 @@
 
     angular
         .module('app.todo', ['ngAnimate']) 
-        .controller('todoCtrl', todoCtrl);
+        .controller('TodoController', TodoController);
 
-         // todoCtrl.$inject = ['guidService'];
+          TodoController.$inject = ['guidService'];
 
-    function todoCtrl(guidService){
+    function TodoController(guidService){
         var vm=this;
         vm.add=add;
         vm.remove=remove;
@@ -54,12 +54,12 @@
             });
    
         };
-        vm.hoverIn = function(){
-           this.hoverEdit = true;
+        vm.hoverIn = function(el){
+           el.hoverEdit = true;
         };
 
-        vm.hoverOut = function(){
-            this.hoverEdit = false;
+        vm.hoverOut = function(el){
+            el.hoverEdit = false;
         };
         // function markIn(){
         //     vm.markEdit=true;
